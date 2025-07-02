@@ -42,7 +42,7 @@
 </head>
 <body class="font-sans antialiased text-gray-800">
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
+    <header class="sticky top-0 z-50 bg-white shadow-sm" x-data="{ open: false }">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">DA</div>
@@ -51,11 +51,15 @@
             
             <nav class="hidden md:flex space-x-8">
                 <a href="#" class="text-purple-600 font-medium hover:text-purple-800 transition">Home</a>
-                <a href="#" class="text-gray-600 hover:text-purple-600 transition">Shop</a>
-                <a href="#" class="text-gray-600 hover:text-purple-600 transition">Categories</a>
-                <a href="#" class="text-gray-600 hover:text-purple-600 transition">About</a>
-                <a href="#" class="text-gray-600 hover:text-purple-600 transition">Contact</a>
+                <a href="#" class="text-gray-600 hover:text-purple-600 transition">Shop <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
+                <a href="#" class="text-gray-600 hover:text-purple-600 transition">Categories <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
+                <a href="#" class="text-gray-600 hover:text-purple-600 transition">About <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
+                <a href="#" class="text-gray-600 hover:text-purple-600 transition">Contact <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
             </nav>
+
+            <button class="md:hidden p-2 text-gray-600" @click="open = !open">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
             
             <div class="flex items-center space-x-4">
                 <button class="p-2 text-gray-600 hover:text-purple-600">
@@ -70,8 +74,22 @@
                 </button>
             </div>
         </div>
-        
+
+        <div class="mobile-menu md:hidden bg-white shadow-md" x-show="open" x-transition>
+            <nav class="p-4 space-y-2">
+                <a href="#" class="block text-purple-600 font-medium">Home</a>
+                <a href="#" class="block text-gray-600">Shop <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
+                <a href="#" class="block text-gray-600">Categories <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
+                <a href="#" class="block text-gray-600">About <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
+                <a href="#" class="block text-gray-600">Contact <span class="ml-1 text-xs text-yellow-600">(Coming Soon)</span></a>
+            </nav>
+        </div>
+
     </header>
+
+    <div class="bg-yellow-100 text-yellow-800 text-center py-4 font-semibold">
+        ⚠️ This is a temporary site layout. The full DigiArtifact experience launches July 13th, 2025.
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-gradient text-white py-20">
@@ -123,7 +141,7 @@
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Explore Our Digital Categories</h2>
+                <h2 class="text-3xl font-bold mb-4">Explore Our Digital Categories <span class="text-sm text-yellow-600">(Coming Soon)</span></h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Browse through our diverse collection of AI-generated digital products</p>
             </div>
             
@@ -180,8 +198,8 @@
     <section class="py-16">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center mb-12">
-                <h2 class="text-3xl font-bold">Featured Digital Goods</h2>
-                <a href="#" class="text-purple-600 font-medium hover:underline">View All Products</a>
+                <h2 class="text-3xl font-bold">Featured Digital Goods <span class="text-sm text-yellow-600">(Coming Soon)</span></h2>
+                <a href="#" class="text-purple-600 font-medium hover:underline">View All Products <span class="text-xs text-yellow-600">(Coming Soon)</span></a>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -278,6 +296,7 @@
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-4">What Our Customers Say</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+                <p class="text-red-600 font-semibold mt-2">These testimonials are temporary placeholders and will be updated soon.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -351,7 +370,7 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <h2 class="text-3xl font-bold mb-4">Get In Touch <span class="text-sm text-yellow-600">(Coming Soon)</span></h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Have questions? We're here to help!</p>
             </div>
             
@@ -411,7 +430,7 @@
     <!-- CTA Section -->
     <section class="py-16 bg-purple-800 text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to Explore AI-Created Digital Goods?</h2>
+            <h2 class="text-3xl font-bold mb-6">Ready to Explore AI-Created Digital Goods? <span class="text-sm text-yellow-300">(Coming Soon)</span></h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Join thousands of creators and entrepreneurs who are leveraging AI to enhance their digital workflow.</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <button class="bg-white text-purple-600 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition shadow-lg">Start Shopping</button>
@@ -459,12 +478,12 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4">Shop</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">All Products</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">AI Prompts</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">POD Designs</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Digital Planners</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">AI Media</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Digital Stickers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">All Products <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">AI Prompts <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">POD Designs <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Digital Planners <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">AI Media <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Digital Stickers <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
                     </ul>
                 </div>
                 
@@ -472,10 +491,10 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Our Process</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Our Process <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Testimonials <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
                     </ul>
                 </div>
                 
@@ -483,8 +502,8 @@
                 <div>
                     <h3 class="font-bold text-lg mb-4">Support</h3>
                     <ul class="space-y-2">
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact Us <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs <span class="text-xs text-yellow-600">(Coming Soon)</span></a></li>
                     </ul>
                 </div>
             </div>
